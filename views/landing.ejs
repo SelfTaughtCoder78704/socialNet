@@ -1,0 +1,24 @@
+<% include partials/header.ejs %>
+<div class="myWrap">
+    <div class="container">
+        <div class="jumbotron text-center" id="landingDiv">
+            <h1 style="color: white;text-shadow: 1px 1px 1px black; font-size: 100px;">Bullybook</h1>
+            <p class="lead" style="color: black">Our social network for buying and selling bully-dogs</p>
+            <div class="container">
+                <% if(!user){ %>
+                    <a href="/users/register" class="btn btn-success">Sign Up</a>
+                    <a href="/users/login" class="btn btn-info">Log In</a>
+                    <br><br>
+                    <a href="/dogs" class="btn btn-danger btn-lg">See Bullies Now</a>
+                <% }else{ %>
+                    <a href="/profile" class="btn btn-success myBtn">My Profile</a>
+                    <a href="/homefeed" class="btn btn-info myBtn">My Feed</a>
+                    <br><br>
+                    <a href="/dogs" class="btn btn-danger btn-lg myBtn">See Bullies Now</a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include partials/footer.ejs %>

@@ -1,0 +1,91 @@
+<% include partials/header.ejs %>
+<div class="container"id='feedWrap'>
+    <div class="container" id="feedBackground" style="background:url(/upload/<%= user.userImage %>); background-repeat: no-repeat;
+        background-size: auto;
+        background-position: bottom center;
+        background-attachment: fixed;">
+            <h1 style="text-shadow: 1px 1px 1px black;color: white"><%= user.firstName %>'s Feed</h1>
+            <a href="/profile"><img src="/upload/<%= user.userImage %>"  alt="" class="img-fluid" id='userAvatar2'></a>
+    </div>
+    <div class="container text-center">
+            <img src="/bullyBookLogo.png" width="250" alt="" class="img-fluid" style="margin: 20px;">
+    </div>
+    <h3 class="text-center" style="color: white; text-shadow: 1px 1px 1px black;">Posts are sorted by your newest to oldest, then friends newest to oldest.</h3>
+    <div class="container text-center" id="feedEm">
+            <div id="postFeed">
+        
+                <%  for(let i = strippedPosts.length - 1; i >= 0; i--){ %>
+                    <%  if(strippedPosts[i].authorName === user.username){ %>
+                        <h2>YOUR POST</h2>
+                    <div class="container text-center each-feed" >
+                        
+                        <h2>@<%= strippedPosts[i].authorName %></h2>
+                        <h2><%= strippedPosts[i].postTitle %></h2>
+                        <hr>
+                        <p><%= strippedPosts[i].postBody %></p>
+                        <p><%= strippedPosts[i].time %></p>
+                        <form action="/posts/<%= strippedPosts[i]._id %>" method="POST" class="form-group comments">
+                            <input class="form-control" type="text" placeholder="Add Comment" name="post">
+                            <button class="btn btn-info myBtn2">Add</button>
+                        </form>
+                        <h6>Comments</h6>
+                        <ul class="list-group">
+                                <% strippedPosts[i].comments.forEach(comment => { %>
+                                    <li class="list-group-item"><h4><%= comment.userName %></h4> <p><%= comment.comment %></p></li>
+            
+                               <% }) %>
+                            
+                          
+                        </ul>
+                    </div>    
+                    <%   } else{  %>
+                        <h2 style="color: red;text-shadow: 1px 1px 1px black;"> Friend Post </h2>
+                        <div class="container text-center each-feed" >
+                        
+                                <h2>@<%= strippedPosts[i].authorName %></h2>
+                                <h2><%= strippedPosts[i].postTitle %></h2>
+                                <hr>
+                                <p><%= strippedPosts[i].postBody %></p>
+                                <p><%= strippedPosts[i].time %></p>
+                                <form action="/posts/<%= strippedPosts[i]._id %>" method="POST" class="form-group comments">
+                                    <input class="form-control" type="text" placeholder="Add Comment" name="post">
+                                    <button class="btn btn-info myBtn2">Add</button>
+                                </form>
+                                <h6>Comments</h6>
+                                <ul class="list-group">
+                                        <% strippedPosts[i].comments.forEach(comment => { %>
+                                            <li class="list-group-item"><h4><%= comment.userName %></h4> <p><%= comment.comment %></p></li>
+                    
+                                       <% }) %>
+                                    
+                                  
+                                </ul>
+                            </div> 
+                            <%  } %>
+                        
+                <% } %>
+
+
+               
+            </div>
+           <div class="friends">
+               
+               <ul class="list-group">
+                   <li class="list-group-item"><h3>Friends</h3></li>
+                   <% if(user.friendsList.length > 0){ %>
+                        <% user.friendsList.forEach(myFriend => { %>
+                            <li class="list-group-item"><%= myFriend.friendName %></li>
+                        <% }) %>
+                    <%  }else{ %>
+                           <% user.friendsList.forEach(myFriend => { %>
+                                <li class="list-group-item">No Friends Yet</li>
+                            <% }) %>
+                    <%   } %>
+               
+               </ul>
+           </div>
+        </div>
+</div>
+
+
+<% include partials/footer.ejs %>

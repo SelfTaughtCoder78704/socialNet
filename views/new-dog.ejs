@@ -1,0 +1,18 @@
+<% include partials/header.ejs %>
+
+<div class="container" id="addDog">
+    <h1 class="display-4 text-center">Add your bully to our list</h1>
+    <form action="/dogs" method="POST" id="dogForm">
+        <div class="form-group">
+            <label for="name">Dog Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+            <label for="image">Dog Image</label>
+            <input type="text" class="form-control" id="image" name="image" placeholder="Image URL">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <br><br>
+    <a href="/dogs" class="btn btn-danger">Go Back</a>
+</div>
+
+<% include partials/footer.ejs %>

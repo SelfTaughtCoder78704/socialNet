@@ -1,0 +1,26 @@
+<% include partials/header.ejs %>
+
+
+	<div id="allUsers">
+	<% result.forEach((res, i) => { %>
+        <div class="usercard ">
+                <img class="usercard-image" src="upload/<%= res.userImage %>"width='100'>
+                <h4 class="usercard-name"><%=   res.firstName %></h4>
+                <p class="usercard-username">@(<%= res.username %>)</p> 
+                <%    if(allFriendsNames.includes(res.username)){ %>
+                    <button class="btn btn-warning btn-lg" disabled style="color: black;">ALREADY FRIENDS</button>
+                    <%    } else{ %>
+                    <form action="" method="get" class="add_friend">
+                        <input type="hidden" name="receiverName" class="receiverName" value="<%= user.username %>">
+                        <input type="hidden" name="sender-name" class="sender-name" value="<%= res.username %>">
+                        <button type="submit" id="" onclick="addFriend('<%= res.username %>')" class="btn btn-info btn-lg" style="color: black"><i class="fa fa-user"></i> Add Friend</button>
+                    </form>  
+                    <%    } %>
+               
+            </div>
+        
+    <% }) %>
+</div>
+
+
+<% include partials/footer.ejs %>
