@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css?family=Racing+Sans+One&display=swap');
+
+body{
+
+  width: 100%;
+  
+ 
+  font-family: 'Racing Sans One', cursive;
+  
+}
+.navbar-brand img{
+  width: 100px;
+}
+
+.jumbotron{
+  box-shadow: 4px 8px 12px rgba(0,0,0,0.5);
+  background: linear-gradient(to right,white,rgb(209, 207, 207),rgb(190, 183, 183), rgb(94, 88, 88), rgba(33,37,41,0.6));
+}
+.myBtn{
+  color: black;
+  font-size:20px;
+  text-shadow: none;
+  width: 300px;
+}
+.myBtn2{
+  color: black;
+  font-size:20px;
+  text-shadow: none;
+  width: 100px;
+}
+.myWrap{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:linear-gradient(rgb(19, 18, 18),rgb(172, 160, 160),rgb(182, 179, 179),white);
+}
+
+#addDog{
+  margin-top: 200px;
+}
+
+.dropdown-item:hover{
+  background: #d9534f;
+}
+
+.list-group-item{
+  color: #d9534f;
+  border: 1px solid black;
+
+}
+
+.nav-link {
+  font-size: 2ch;
+  transition: 0.5s;
+}
+.nav-link:hover{
+  background: #1F9BCF;
+  padding: 10px;
+
+}
+
+#landingDiv{
+  padding: 20px;
+}
+
+h1, p{
+  color: #1F9BCF;
+}
+
+.btn{
+  transition: 0.5s;
+}
+
+.btn:hover{
+  box-shadow: 2px 4px 6px rgba(0,0,0,0.5);
+}
+#feedEm{
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-gap: 1em;
+  
+}
+#feedJum{
+  width: 90%;
+  margin: 0 auto;
+}
+.each-feed{
+  border: 1px solid #919aa1;
+  padding: 20px;
+  width: 70%;
+  margin: 10px auto;
+  background: #ffffff;;
+ 
+}
+.friends {
+  margin: 10px auto;
+  width: 100%;
+}
+
+
+.comments input{
+  width: 70%;
+  display: inline;
+}
+
+#dogForm{
+  padding: 15px;
+  box-shadow: 4px 8px 12px rgba(0,0,0,0.5);
+  background: rgba(33,37,41,0.6);
+  color: white;
+}
+#profilePage{
+  width: 75%;
+  height: 100%;
+  background: linear-gradient( #1A1A1A, rgb(147, 149, 151), white);
+  padding: 30px;
+  margin: 0 auto;
+}
+
+#profileHead{
+  width: 100%;
+}
+
+#welcomeProf{
+  background: rgba(211, 12, 12, 0.6);
+  
+  padding: 5px;
+}
+
+#welcomeProf p{
+  color: white;
+  text-shadow: .5px .5px .5px black;
+}
+
+#profileWrap{
+width: 80%;
+margin: 0 auto;
+ display: grid;
+ grid-template-columns: 30% 70%;
+}
+
+#rightSide{
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+}
+
+#rightSide .container{
+  padding-left: 0;
+}
+#leftSide{
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  grid-row-gap: 1em;
+}
+#allPosts{
+  background: white;
+  padding: 10px;
+}
+#addPost{
+  background: white;
+  padding: 20px;
+}
+#addPost textarea{
+  width: 100%;
+  border-radius: 5px;
+
+}
+#userInfo{
+  background: white;
+  padding: 10px;
+
+}
+#feedWrap{
+  
+  background: linear-gradient( #1A1A1A, rgb(147, 149, 151), white);
+  padding: 30px;
+}
+
+#feedBackground{
+ width: 100%;
+ height: 300px;
+ 
+}
+
+.usercard{
+  border: 1px solid black;
+  text-align: center;
+  padding: 30px;
+}
+
+.usercard-image {
+  width: 100px;
+  height: 120px;
+  border-radius: 100%;
+}
+
+#allUsers{
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-gap: 2em;
+}
+.custombutton{
+  background: white;
+}
+#editPost{
+  float: right;
+  background: transparent !important;
+  color: black;
+  font-weight: bold;
+  padding: 5px !important;
+
+}
+#editPost:hover{
+  box-shadow: none;
+}
+#userAvatar{
+  width: 10%;
+  margin: 20px;
+  
+  border: 1px solid black;
+  background: linear-gradient(to right, rgb(43, 43, 214), white);
+}
+#userAvatar2{
+  width: 10%;
+  margin: 10px;
+  
+  border: 1px solid black;
+  background: linear-gradient(to right, rgb(43, 43, 214), white);
+}
+#userImgs{
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  background: white;
+  grid-gap: 1em;
+  padding: 10px;
+}
+
+#userImgs img{
+  width: 100%;
+}
+
+.allUsers{
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  background: white;
+  grid-gap: 1em;
+  padding: 10px;
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
